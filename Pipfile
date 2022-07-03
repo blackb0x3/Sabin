@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 mediatr = "*"
 pillow = "*"
+sklearn = "*"
+opencv-python = "*"
+scikit-image = "*"
 
 [dev-packages]
 
