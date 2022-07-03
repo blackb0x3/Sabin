@@ -28,6 +28,7 @@ async def main():
     parser.add_argument('--original', required=True, type=str)
     parser.add_argument('--tileset', required=True, type=str)
     parser.add_argument('--tilesize', required=False, default=16)
+    parser.add_argument('--colour-match-approach', required=False, default='dominant')
     parsed_args = parser.parse_args()
     generate_mosaic_command = GenerateMosaicCommand(parsed_args.original, parsed_args.tileset, parsed_args.tilesize)
 
