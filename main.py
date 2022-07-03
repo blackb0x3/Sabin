@@ -30,7 +30,13 @@ async def main():
     parser.add_argument('--tilesize', required=False, default=16)
     parser.add_argument('--colour-match-approach', required=False, default='dominant')
     parsed_args = parser.parse_args()
-    generate_mosaic_command = GenerateMosaicCommand(parsed_args.original, parsed_args.tileset, parsed_args.tilesize)
+
+    generate_mosaic_command = GenerateMosaicCommand(
+        parsed_args.original,
+        parsed_args.tileset,
+        parsed_args.tilesize,
+        parsed_args.colour_match_approach,
+        output_path)
 
     mediator = Mediator()
     mediator.register_handler(GenerateMosaicCommandHandler)
