@@ -27,7 +27,7 @@ async def main():
     parser = argparse.ArgumentParser(description=program_description)
     parser.add_argument('--original', required=True, type=str)
     parser.add_argument('--tileset', required=True, type=str)
-    parser.add_argument('--tilesize', required=False, default=16)
+    parser.add_argument('--tilesize', required=False, default=16, type=int)
     parser.add_argument('--colour-match-approach', required=False, default='dominant')
     parsed_args = parser.parse_args()
 
@@ -43,7 +43,7 @@ async def main():
     result = await mediator.send_async(generate_mosaic_command)
 
     if isinstance(result, ErrorResponse) or isinstance(result, BadRequestResponse):
-        logging.info({'msg': 'something went wrong', 'err': result.message})
+        logging.error({'msg': 'something went wrong', 'err': result.message})
     else:
         logging.info({'msg': f'Photomosaic generated at {output_path}'})
 

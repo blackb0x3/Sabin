@@ -9,6 +9,7 @@ pillow = "*"
 sklearn = "*"
 opencv-python = "*"
 scikit-image = "*"
+requests = "*"
 
 [dev-packages]
 
